@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#090d16" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Campus3D Nav" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>3D Indoor Campus Navigation & Incident Management</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body, html, #root {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        font-family: system-ui, -apple-system, sans-serif;
+        background: #0f172a;
+        color: #f8fafc;
+      }
+
+      /* Mobile & Android APK Responsive Layout */
+      @media (max-width: 900px) {
+        header {
+          height: auto !important;
+          padding: 8px 10px !important;
+          flex-wrap: wrap !important;
+          gap: 6px !important;
+        }
+        header span {
+          font-size: 12px !important;
+        }
+        header div {
+          flex-wrap: wrap !important;
+          gap: 4px !important;
+        }
+        header button {
+          padding: 5px 8px !important;
+          font-size: 11px !important;
+        }
+
+        /* Any split workspace containing an <aside> and <main> (User Portal, Admin Twin, & Floorplan Studio) */
+        div:has(> aside):has(> main) {
+          flex-direction: column-reverse !important;
+          height: 100% !important;
+          overflow: hidden !important;
+        }
+
+        /* Bottom scrollable control sheet on mobile */
+        aside {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: 43vh !important;
+          flex: none !important;
+          border-right: none !important;
+          border-top: 2px solid #38bdf8 !important;
+          padding: 10px !important;
+          overflow-y: auto !important;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        /* Top 3D Viewport / 2D Blueprint Canvas on mobile */
+        main {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: 45vh !important;
+          flex: 1 1 auto !important;
+          overflow: hidden !important;
+        }
+
+        /* Ensure the scrollable SVG blueprint container starts at the top-left on mobile so it isn't clipped */
+        main > div:last-child {
+          justify-content: flex-start !important;
+          align-items: flex-start !important;
+          padding: 10px !important;
+          overflow: auto !important;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

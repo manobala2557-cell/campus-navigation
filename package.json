@@ -1,0 +1,41 @@
+{
+  "name": "campus-nav-system",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "electronMain.cjs",
+  "scripts": {
+    "scripts": {
+    "start": "tsx server/incidentServer.ts",
+    "dev:client": "vite",
+    "dev:server": "tsx watch server/incidentServer.ts",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/cli": "^8.5.3",
+    "@capacitor/core": "^8.5.3",
+    "@react-three/drei": "^9.105.0",
+    "@react-three/fiber": "^8.16.2",
+    "lucide-react": "^0.378.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.164.1",
+    "ws": "^8.17.0"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.3.0",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "@types/three": "^0.164.0",
+    "@types/ws": "^8.5.10",
+    "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^8.2.2",
+    "electron": "^44.7.2",
+    "tsx": "^4.10.5",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11"
+  }
+}
