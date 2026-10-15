@@ -5,7 +5,6 @@
   "type": "module",
   "main": "electronMain.cjs",
   "scripts": {
-    "scripts": {
     "start": "tsx server/incidentServer.ts",
     "dev:client": "vite",
     "dev:server": "tsx watch server/incidentServer.ts",
